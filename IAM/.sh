@@ -41,3 +41,8 @@ aws iam add-user-to-group --group-name Engineers --user-name Novak
 
 # permissons policies 
 
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonVPCFullAccess \
+ --group-name Engineers
+
+
+
