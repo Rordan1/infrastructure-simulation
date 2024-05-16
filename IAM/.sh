@@ -28,11 +28,16 @@ aws iam list-users
 
 #  set up groups + check if successful
 
-aws iam add-user-to-group --group-name Developer --user-name Carlos
-aws iam add-user-to-group --group-name Engineers --user-name Novak --user-name Roger
+aws iam create-group --group-name Developer 
+aws iam create-group --group-name Engineers  
 
 aws iam list-groups
 
+# add users to groups 
+
+aws iam add-user-to-group --group-name Developer --user-name Carlos
+aws iam add-user-to-group --group-name Engineers --user-name Roger
+aws iam add-user-to-group --group-name Engineers --user-name Novak 
 
 # permissons policies 
 
