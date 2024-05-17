@@ -73,6 +73,3 @@ aws iam create-login-profile --user-name Novak --password Temp-pass3 --password-
 aws iam update-account-password-policy --allow-users-to-change-password
 
 
-# cloudshell acccess
-
-
