@@ -45,10 +45,14 @@ aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonRDSFullAc
  --group-name Developer
 aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonRDSDataFullAccess \
  --group-name Developer
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AWSCloudShellFullAccess \
+ --group-name Developer
 
 aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonVPCFullAccess \
  --group-name Engineers
 aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonRoute53FullAccess \
+ --group-name Engineers
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AWSCloudShellFullAccess \
  --group-name Engineers
 
 # access keys 
@@ -59,4 +63,16 @@ aws iam create-access-key \
     --user-name Roger
 aws iam create-access-key \
     --user-name Novak
+
+# console access + additional password changing permissions
+
+aws iam create-login-profile --user-name Carlos --password Temp-pass1 --password-reset-required
+aws iam create-login-profile --user-name Roger --password Temp-pass2 --password-reset-required
+aws iam create-login-profile --user-name Novak --password Temp-pass3 --password-reset-required
+
+aws iam update-account-password-policy --allow-users-to-change-password
+
+
+# cloudshell acccess
+
 
